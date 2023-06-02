@@ -47,7 +47,7 @@
                                     <th>Pengarang</th>
                                     <th>Penerbit</th>
                                     <th>Buku Baik</th>
-                                    <th>Buku Rusak</th>
+                                    <!-- <th>Buku Rusak</th> -->
                                     <th>Jumlah Buku</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -63,15 +63,15 @@
                                     <tr>
                                         <td><?= $no++; ?></td>
                                         <td><?= $row['judul_buku']; ?></td>
-                                        <td><?= $row['pengarang']; ?></td>
+                                        <td><?= $row['pengarang_buku']; ?></td>
                                         <td><?= $row['penerbit_buku']; ?></td>
-                                        <td><?= $row['j_buku_baik']; ?></td>
-                                        <td><?= $row['j_buku_rusak']; ?></td>
+                                        <td><?= $row['jumlah_buku']; ?></td>
+                                        <!-- <td><?= $row['j_buku_rusak']; ?></td> -->
                                         <td><?php
-                                            $j_buku_rusak = $row['j_buku_rusak'];
-                                            $j_buku_baik = $row['j_buku_baik'];
+                                            // $j_buku_rusak = $row['j_buku_rusak'];
+                                            $jumlah_buku = $row['jumlah_buku'];
 
-                                            echo $j_buku_rusak + $j_buku_baik;
+                                            echo $jumlah_buku;
                                             ?></td>
                                         <td>
                                             <a href="#" data-target="#modalEditBuku<?= $row['id_buku']; ?>" data-toggle="modal" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
@@ -85,7 +85,7 @@
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Edit Buku ( <?= $row['judul_buku']; ?> - <?= $row['pengarang']; ?> )</h4>
+                                                    <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Edit Buku ( <?= $row['judul_buku']; ?> - <?= $row['pengarang_buku']; ?> )</h4>
                                                 </div>
                                                 <form action="pages/function/Buku.php?act=edit" enctype="multipart/form-data" method="POST">
                                                     <div class="modal-body">
@@ -128,7 +128,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Pengarang <small style="color: red;">* Wajib diisi</small></label>
-                                                            <input type="text" class="form-control" value="<?= $row['pengarang']; ?>" name="pengarang" required>
+                                                            <input type="text" class="form-control" value="<?= $row['pengarang_buku']; ?>" name="pengarang" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Tahun Terbit <small style="color: red;">* Wajib diisi</small></label>
@@ -140,12 +140,12 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Jumlah Buku Baik <small style="color: red;">* Wajib diisi</small></label>
-                                                            <input type="number" class="form-control" value="<?= $row['j_buku_baik']; ?>" name="jumlahBukuBaik" required>
+                                                            <input type="number" class="form-control" value="<?= $row['jumlah_buku']; ?>" name="jumlahBukuBaik" required>
                                                         </div>
-                                                        <div class="form-group">
+                                                        <!-- <div class="form-group">
                                                             <label>Jumlah Buku Rusak <small style="color: red;">* Wajib diisi</small></label>
                                                             <input type="number" class="form-control" value="<?= $row['j_buku_rusak']; ?>" name="jumlahBukuRusak" required>
-                                                        </div>
+                                                        </div> -->
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="submit" class="btn btn-primary btn-block">Simpan</button>
@@ -235,10 +235,10 @@
                         <label>Jumlah Buku Baik <small style="color: red;">* Wajib diisi</small></label>
                         <input type="number" class="form-control" placeholder="Masukan Jumlah Buku Baik" name="jumlahBukuBaik" required>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Jumlah Buku Rusak <small style="color: red;">* Wajib diisi</small></label>
                         <input type="number" class="form-control" placeholder="Masukan Jumlah Buku Rusak" name="jumlahBukuRusak" required>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary btn-block">Simpan</button>

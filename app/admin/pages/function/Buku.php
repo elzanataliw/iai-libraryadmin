@@ -6,15 +6,15 @@ if ($_GET['act'] == "tambah") {
     $judul_buku = $_POST['judulBuku'];
     $kategori_buku = $_POST['kategoriBuku'];
     $penerbit_buku = $_POST['penerbitBuku'];
-    $pengarang = $_POST['pengarang'];
+    $pengarang_buku = $_POST['pengarang'];
     $tahun_terbit = $_POST['tahunTerbit'];
     $isbn = $_POST['iSbn'];
-    $j_buku_baik = $_POST['jumlahBukuBaik'];
-    $j_buku_rusak = $_POST['jumlahBukuRusak'];
+    $jumlah_buku = $_POST['jumlahBukuBaik'];
+    // $j_buku_rusak = $_POST['jumlahBukuRusak'];
 
     // PROCESS INSERT DATA TO DATABASE
-    $sql = "INSERT INTO buku(judul_buku,kategori_buku,penerbit_buku,pengarang,tahun_terbit,isbn,j_buku_baik,j_buku_rusak)
-        VALUES('" . $judul_buku . "','" . $kategori_buku . "','" . $penerbit_buku . "','" . $pengarang . "','" . $tahun_terbit . "','" . $isbn . "', '" . $j_buku_baik . "', '" . $j_buku_rusak . "')";
+    $sql = "INSERT INTO buku(judul_buku,kategori_buku,penerbit_buku,pengarang_buku,tahun_terbit,isbn,jumlah_buku)
+        VALUES('" . $judul_buku . "','" . $kategori_buku . "','" . $penerbit_buku . "','" . $pengarang_buku . "','" . $tahun_terbit . "','" . $isbn . "', '" . $jumlah_buku . "')";
     $sql .= mysqli_query($koneksi, $sql);
 
     if ($sql) {
@@ -29,15 +29,15 @@ if ($_GET['act'] == "tambah") {
     $judul_buku = $_POST['judulBuku'];
     $kategori_buku = $_POST['kategoriBuku'];
     $penerbit_buku = $_POST['penerbitBuku'];
-    $pengarang = $_POST['pengarang'];
+    $pengarang_buku = $_POST['pengarang'];
     $tahun_terbit = $_POST['tahunTerbit'];
     $isbn = $_POST['iSbn'];
-    $j_buku_baik = $_POST['jumlahBukuBaik'];
-    $j_buku_rusak = $_POST['jumlahBukuRusak'];
+    $jumlah_buku = $_POST['jumlahBukuBaik'];
+    // $j_buku_rusak = $_POST['jumlahBukuRusak'];
 
     // PROCESS EDIT DATA
     $query = "UPDATE buku SET judul_buku = '$judul_buku', kategori_buku = '$kategori_buku', penerbit_buku = '$penerbit_buku', 
-                pengarang = '$pengarang', tahun_terbit = '$tahun_terbit', isbn = '$isbn', j_buku_baik = '$j_buku_baik', j_buku_rusak = '$j_buku_rusak'";
+                pengarang_buku = '$pengarang_buku', tahun_terbit = '$tahun_terbit', isbn = '$isbn', jumlah_buku = '$jumlah_buku'";
 
     $query .= "WHERE id_buku = $id_buku";
 
