@@ -1,8 +1,8 @@
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
+    <section class="sidebar" style="background-color: #235D69;">
         <!-- Sidebar user panel -->
-        <div class="user-panel">
+        <div class="user-panel" style="background-color: #235D69;">
             <div class="pull-left image">
                 <img src="../../assets/dist/img/avatar5.png" class="img-circle" alt="User Image">
             </div>
@@ -30,11 +30,15 @@
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">MAIN MENU</li>
+            <li class="header" style="font-weight: bold;">MAIN MENU</li>
             <li><a href="dashboard"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-            <li class="treeview">
+            <li><a href="data-buku"><i class="fa fa-book"></i> <span>Data Buku</span></a></li>
+            <li><a href="kategori-buku"><i class="fa fa-tags"></i> <span>Data Kategori Buku</span></a></li>
+            <li><a href="penerbit"><i class="fa fa-building"></i> <span>Data Penerbit</span></a></li>
+            <li><a href="administrator"><i class="fa fa-users"></i> <span>Administrator</span></a></li>
+            <!-- <li class="treeview">
                 <a href="#">
-                    <!-- <i class="fa fa-folder"></i> -->
+                    <i class="fa fa-folder"></i>
                     <i class="fa fa-book"></i>
                     <span>Master Data</span>
                     <span class="pull-right-container">
@@ -42,14 +46,14 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <!-- <li><a href="anggota"><i class="fa fa-circle-o"></i> Data Anggota</a></li> -->
+                    <li><a href="anggota"><i class="fa fa-circle-o"></i> Data Anggota</a></li>
                     <li><a href="data-buku"><i class="fa fa-circle-o"></i> Data Buku</a></li>
                     <li><a href="penerbit"><i class="fa fa-circle-o"></i> Data Penerbit</a></li>
                     <li><a href="kategori-buku"><i class="fa fa-circle-o"></i> Data Kategori Buku</a></li>
                     <li><a href="administrator"><i class="fa fa-circle-o"></i> Administrator</a></li>
-                    <!-- <li><a href="data-peminjaman"><i class="fa fa-circle-o"></i> Data Peminjaman</a></li> -->
+                    <li><a href="data-peminjaman"><i class="fa fa-circle-o"></i> Data Peminjaman</a></li>
                 </ul>
-            </li>
+            </li> -->
             <!-- <li class="treeview">
                 <a href="#">
                     <i class="fa fa-book"></i>
