@@ -34,20 +34,23 @@
             <li><a href="dashboard"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-folder"></i>
+                    <!-- <i class="fa fa-folder"></i> -->
+                    <i class="fa fa-book"></i>
                     <span>Master Data</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="anggota"><i class="fa fa-circle-o"></i> Data Anggota</a></li>
+                    <!-- <li><a href="anggota"><i class="fa fa-circle-o"></i> Data Anggota</a></li> -->
+                    <li><a href="data-buku"><i class="fa fa-circle-o"></i> Data Buku</a></li>
                     <li><a href="penerbit"><i class="fa fa-circle-o"></i> Data Penerbit</a></li>
+                    <li><a href="kategori-buku"><i class="fa fa-circle-o"></i> Data Kategori Buku</a></li>
                     <li><a href="administrator"><i class="fa fa-circle-o"></i> Administrator</a></li>
-                    <li><a href="data-peminjaman"><i class="fa fa-circle-o"></i> Data Peminjaman</a></li>
+                    <!-- <li><a href="data-peminjaman"><i class="fa fa-circle-o"></i> Data Peminjaman</a></li> -->
                 </ul>
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
                 <a href="#">
                     <i class="fa fa-book"></i>
                     <span>Katalog Buku</span>
@@ -59,11 +62,11 @@
                     <li><a href="data-buku"><i class="fa fa-circle-o"></i> Data Buku</a></li>
                     <li><a href="kategori-buku"><i class="fa fa-circle-o"></i> Kategori Buku</a></li>
                 </ul>
-            </li>
-            <li><a href="laporan"><i class="fa fa-book"></i> <span>Laporan Perpustakaan</span></a></li>
-            <li class="header">LAIN LAIN</li>
-            <li><a href="identitas-app"><i class="fa fa-info"></i> <span>Identitas Applikasi</span></a></li>
-            <li><a href="pesan"><i class="fa fa-envelope"></i> <span>Pesan</span>
+            </li> -->
+            <!-- <li><a href="laporan"><i class="fa fa-book"></i> <span>Laporan Perpustakaan</span></a></li> -->
+            <!-- <li class="header">LAIN LAIN</li> -->
+            <!-- <li><a href="identitas-app"><i class="fa fa-info"></i> <span>Identitas Applikasi</span></a></li> -->
+            <!-- <li><a href="pesan"><i class="fa fa-envelope"></i> <span>Pesan</span> -->
                     <span class="pull-right-container" id="jumlahPesan">
                         <?php
                         include "../../config/koneksi.php";
@@ -86,7 +89,7 @@
                         ?>
                     </span>
                 </a></li>
-            <li class="header">LANJUTAN</li>
+            <!-- <li class="header">LANJUTAN</li> -->
             <li><a href="#Logout" data-toggle="modal" data-target="#modalLogoutConfirm"><i class="fa fa-sign-out"></i> <span>Keluar</span></a></li>
         </ul>
     </section>
