@@ -45,9 +45,11 @@
                                     <th>No</th>
                                     <th>Judul Buku</th>
                                     <th>Pengarang</th>
+                                    <th>Kategori Buku</th>
                                     <th>Penerbit</th>
-                                    <th>Buku Baik</th>
-                                    <!-- <th>Buku Rusak</th> -->
+                                    <th>ISBN</th>
+                                    <th>Tahun Terbit</th>
+                                    <!-- <th>Buku Baik</th> -->
                                     <th>Jumlah Buku</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -70,8 +72,19 @@
                                         $author = mysqli_query($koneksi, "SELECT * FROM authors WHERE id='$row[author_id]'"); 
                                         $author_row =  mysqli_fetch_assoc($author)?>
                                         <td><?= $author_row['name']; ?></td>
-                                        <td><?= $row['publisher_id']; ?></td>
-                                        <td><?= $row['stock']; ?></td>
+                                        <?php 
+                                        include "../../config/koneksi.php";
+                                        $category = mysqli_query($koneksi, "SELECT * FROM categories WHERE id='$row[category_id]'"); 
+                                        $category_row =  mysqli_fetch_assoc($category)?>
+                                        <td><?= $category_row['name']; ?></td>
+                                        <?php 
+                                        include "../../config/koneksi.php";
+                                        $publish = mysqli_query($koneksi, "SELECT * FROM publisher WHERE id_penerbit='$row[publisher_id]'"); 
+                                        $publish_row =  mysqli_fetch_assoc($publish)?>
+                                        <td><?= $publish_row['nama_penerbit']; ?></td>
+                                        <td><?= $row['isbn']; ?></td>
+                                        <td><?= $row['year_published']; ?></td>
+                                        <!-- <td><?= $row['stock']; ?></td> -->
                                         <!-- <td><?= $row['j_buku_rusak']; ?></td> -->
                                         <td><?php
                                             // $j_buku_rusak = $row['j_buku_rusak'];
@@ -91,7 +104,7 @@
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Edit Buku ( <?= $row['title']; ?> - <?= $row['pengarang_buku']; ?> )</h4>
+                                                    <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Edit Buku ( <?= $row['title']; ?> - <?= $author_row['name']; ?> )</h4>
                                                 </div>
                                                 <form action="pages/function/Buku.php?act=edit" enctype="multipart/form-data" method="POST">
                                                     <div class="modal-body">
@@ -103,7 +116,16 @@
                                                         <div class="form-group">
                                                             <label>Kategori Buku <small style="color: red;">* Wajib diisi</small></label>
                                                             <select class="form-control" name="kategoriBuku">
-                                                                <option selected value="<?= $row['kategori_buku']; ?>"><?= $row['kategori_buku']; ?> ( Dipilih Sebelumnya )</option>
+                                                            <?php
+                                                                include "../../config/koneksi.php";
+
+                                                                $sql = mysqli_query($koneksi, "SELECT * FROM categories WHERE id = '$row[category_id]'");
+                                                                $data = mysqli_fetch_array($sql)
+                                                                ?>
+                                                                    <option selected value="<?= $data['name']; ?>"><?= $data['name']; ?> (Dipilih Sebelumnya)</option>
+                                                                <?php
+                                                                ?>
+
                                                                 <?php
                                                                 include "../../config/koneksi.php";
 
