@@ -62,37 +62,37 @@
                                 <tbody>
                                     <tr>
                                         <td><?= $no++; ?></td>
-                                        <td><?= $row['judul_buku']; ?></td>
+                                        <td><?= $row['title']; ?></td>
                                         <td><?= $row['pengarang_buku']; ?></td>
-                                        <td><?= $row['penerbit_buku']; ?></td>
-                                        <td><?= $row['jumlah_buku']; ?></td>
+                                        <td><?= $row['publisher']; ?></td>
+                                        <td><?= $row['stock']; ?></td>
                                         <!-- <td><?= $row['j_buku_rusak']; ?></td> -->
                                         <td><?php
                                             // $j_buku_rusak = $row['j_buku_rusak'];
-                                            $jumlah_buku = $row['jumlah_buku'];
+                                            $stock = $row['stock'];
 
-                                            echo $jumlah_buku;
+                                            echo $stock;
                                             ?></td>
                                         <td>
-                                            <a href="#" data-target="#modalEditBuku<?= $row['id_buku']; ?>" data-toggle="modal" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
-                                            <a href="pages/function/Buku.php?act=hapus&id=<?= $row['id_buku']; ?>" class="btn btn-danger btn-sm btn-del"><i class="fa fa-trash"></i></a>
+                                            <a href="#" data-target="#modalEditBuku<?= $row['id']; ?>" data-toggle="modal" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                            <a href="pages/function/Buku.php?act=hapus&id=<?= $row['id']; ?>" class="btn btn-danger btn-sm btn-del"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <!-- Modal Edit -->
-                                    <div class="modal fade" id="modalEditBuku<?= $row['id_buku']; ?>">
+                                    <div class="modal fade" id="modalEditBuku<?= $row['id']; ?>">
                                         <div class="modal-dialog">
                                             <div class="modal-content" style="border-radius: 5px;">
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Edit Buku ( <?= $row['judul_buku']; ?> - <?= $row['pengarang_buku']; ?> )</h4>
+                                                    <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Edit Buku ( <?= $row['title']; ?> - <?= $row['pengarang_buku']; ?> )</h4>
                                                 </div>
                                                 <form action="pages/function/Buku.php?act=edit" enctype="multipart/form-data" method="POST">
                                                     <div class="modal-body">
-                                                        <input type="hidden" name="id_buku" value="<?= $row['id_buku']; ?>">
+                                                        <input type="hidden" name="id" value="<?= $row['id']; ?>">
                                                         <div class="form-group">
                                                             <label>Judul Buku <small style="color: red;">* Wajib diisi</small></label>
-                                                            <input type="text" class="form-control" value="<?= $row['judul_buku']; ?>" name="judulBuku">
+                                                            <input type="text" class="form-control" value="<?= $row['title']; ?>" name="judulBuku">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Kategori Buku <small style="color: red;">* Wajib diisi</small></label>
@@ -101,7 +101,7 @@
                                                                 <?php
                                                                 include "../../config/koneksi.php";
 
-                                                                $sql = mysqli_query($koneksi, "SELECT * FROM kategori");
+                                                                $sql = mysqli_query($koneksi, "SELECT * FROM categories");
                                                                 while ($data = mysqli_fetch_array($sql)) {
                                                                 ?>
                                                                     <option value="<?= $data['nama_kategori']; ?>"> <?= $data['nama_kategori']; ?></option>
@@ -113,11 +113,11 @@
                                                         <div class="form-group">
                                                             <label>Penerbit Buku <small style="color: red;">* Wajib diisi</small></label>
                                                             <select class="form-control select2" name="penerbitBuku">
-                                                                <option selected value="<?= $row['penerbit_buku']; ?>"><?= $row['penerbit_buku']; ?> ( Dipilih Sebelumnya )</option>
+                                                                <option selected value="<?= $row['publisher']; ?>"><?= $row['publisher']; ?> ( Dipilih Sebelumnya )</option>
                                                                 <?php
                                                                 include "../../config/koneksi.php";
 
-                                                                $sql = mysqli_query($koneksi, "SELECT * FROM penerbit");
+                                                                $sql = mysqli_query($koneksi, "SELECT * FROM publisher");
                                                                 while ($data = mysqli_fetch_array($sql)) {
                                                                 ?>
                                                                     <option value="<?= $data['nama_penerbit']; ?>"><?= $data['nama_penerbit']; ?> ( <?= $data['verif_penerbit']; ?> )</option>
@@ -132,7 +132,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Tahun Terbit <small style="color: red;">* Wajib diisi</small></label>
-                                                            <input type="number" min="2000" max="2100" class="form-control" value="<?= $row['tahun_terbit']; ?>" name="tahunTerbit" required>
+                                                            <input type="number" min="2000" max="2100" class="form-control" value="<?= $row['year_published']; ?>" name="tahunTerbit" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>ISBN <small style="color: red;">* Wajib diisi</small></label>
@@ -140,7 +140,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Jumlah Buku Baik <small style="color: red;">* Wajib diisi</small></label>
-                                                            <input type="number" class="form-control" value="<?= $row['jumlah_buku']; ?>" name="jumlahBukuBaik" required>
+                                                            <input type="number" class="form-control" value="<?= $row['stock']; ?>" name="jumlahBukuBaik" required>
                                                         </div>
                                                         <!-- <div class="form-group">
                                                             <label>Jumlah Buku Rusak <small style="color: red;">* Wajib diisi</small></label>
@@ -194,7 +194,7 @@
                             <?php
                             include "../../config/koneksi.php";
 
-                            $sql = mysqli_query($koneksi, "SELECT * FROM kategori");
+                            $sql = mysqli_query($koneksi, "SELECT * FROM categories");
                             while ($data = mysqli_fetch_array($sql)) {
                             ?>
                                 <option value="<?= $data['nama_kategori']; ?>"> <?= $data['nama_kategori']; ?></option>
@@ -210,7 +210,7 @@
                             <?php
                             include "../../config/koneksi.php";
 
-                            $sql = mysqli_query($koneksi, "SELECT * FROM penerbit");
+                            $sql = mysqli_query($koneksi, "SELECT * FROM publisher");
                             while ($data = mysqli_fetch_array($sql)) {
                             ?>
                                 <option value="<?= $data['nama_penerbit']; ?>"><?= $data['nama_penerbit']; ?> ( <?= $data['verif_penerbit']; ?> )</option>

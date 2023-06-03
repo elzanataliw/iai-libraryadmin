@@ -9,7 +9,7 @@ if ($_GET['aksi'] == "edit") {
     $email = $_POST['Email'];
     $telp = $_POST['Telp'];
 
-    $query = "UPDATE identitas SET nama_app = '$nama_applikasi', alamat_app = '$alamat', email_app = '$email', nomor_hp = '$telp'";
+    $query = "UPDATE identity SET nama_app = '$nama_applikasi', alamat_app = '$alamat', email_app = '$email', nomor_hp = '$telp'";
     $query .= "WHERE id_identitas = '$id_identitas'";
 
     $sql = mysqli_query($koneksi, $query);

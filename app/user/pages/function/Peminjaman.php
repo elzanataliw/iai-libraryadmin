@@ -15,19 +15,19 @@ if ($_GET['aksi'] == "pinjam") {
         include "Pemberitahuan.php";
 
         $nama_anggota = $_POST['namaAnggota'];
-        $judul_buku = $_POST['judulBuku'];
+        $title = $_POST['judulBuku'];
         $tanggal_peminjaman = $_POST['tanggalPeminjaman'];
         $kondisi_buku_saat_dipinjam = $_POST['kondisiBukuSaatDipinjam'];
 
-        $query = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE nama_anggota = '$nama_anggota' AND judul_buku = '$judul_buku' AND tanggal_pengembalian = ''");
+        $query = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE nama_anggota = '$nama_anggota' AND title = '$title' AND tanggal_pengembalian = ''");
         $cek = mysqli_num_rows($query);
 
         if ($cek > 0) {
             $_SESSION['gagal'] = "Peminjaman buku gagal, Kamu telah meminjam buku ini sebelumnya !";
             header("location: " . $_SERVER['HTTP_REFERER']);
         } else {
-            $sql = "INSERT INTO peminjaman(nama_anggota,judul_buku,tanggal_peminjaman,kondisi_buku_saat_dipinjam)
-            VALUES('" . $nama_anggota . "','" . $judul_buku . "','" . $tanggal_peminjaman . "','" . $kondisi_buku_saat_dipinjam . "')";
+            $sql = "INSERT INTO peminjaman(nama_anggota,title,tanggal_peminjaman,kondisi_buku_saat_dipinjam)
+            VALUES('" . $nama_anggota . "','" . $title . "','" . $tanggal_peminjaman . "','" . $kondisi_buku_saat_dipinjam . "')";
             $sql .= mysqli_query($koneksi, $sql);
 
             // Send notif to admin
@@ -55,11 +55,11 @@ if ($_GET['aksi'] == "pinjam") {
         $denda = "Rp 50.000";
     }
 
-    $judul_buku = $_POST['judulBuku'];
+    $title = $_POST['judulBuku'];
     $tanggal_pengembalian = $_POST['tanggalPengembalian'];
     $kondisiBukuSaatDikembalikan = $_POST['kondisiBukuSaatDikembalikan'];
 
-    $ambil_id = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE judul_buku = '$judul_buku'");
+    $ambil_id = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE title = '$title'");
     $row = mysqli_fetch_assoc($ambil_id);
 
     $id_peminjaman = $row['id_peminjaman'];
@@ -89,7 +89,7 @@ function UpdateDataPeminjaman()
     $nama_anggota = $_POST['Fullname'];
 
     // Mencari nama dalam database berdasarkan session nama lengkap
-    $query1 = mysqli_query($koneksi, "SELECT * FROM user WHERE fullname = '$nama_lama'");
+    $query1 = mysqli_query($koneksi, "SELECT * FROM administrator WHERE fullname = '$nama_lama'");
     $row = mysqli_fetch_assoc($query1);
 
     // membuat variable dari hasil query1

@@ -77,7 +77,7 @@
                                                 $nama = $row_pesan1['pengirim'];
                                                 $id2 = $_SESSION['id_user'];
 
-                                                $query_cek_verif = mysqli_query($koneksi, "SELECT * FROM user WHERE fullname = '$nama'");
+                                                $query_cek_verif = mysqli_query($koneksi, "SELECT * FROM administrator WHERE fullname = '$nama'");
                                                 $row_cek = mysqli_fetch_array($query_cek_verif);
                                                 ?>
 
@@ -109,7 +109,7 @@
                         <span class="hidden-xs"><?= $_SESSION['fullname']; ?>
                             <?php include "../../config/koneksi.php";
                             $id = $_SESSION['id_user'];
-                            $query_verif = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user = '$id'");
+                            $query_verif = mysqli_query($koneksi, "SELECT * FROM administrator WHERE id_user = '$id'");
                             $row = mysqli_fetch_array($query_verif);
 
                             if ($row['verif'] == "Iya") {
@@ -132,7 +132,7 @@
                                 include "../../config/koneksi.php";
 
                                 $id = $_SESSION['id_user'];
-                                $query = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user = '$id'");
+                                $query = mysqli_query($koneksi, "SELECT * FROM administrator WHERE id_user = '$id'");
                                 while ($row = mysqli_fetch_array($query)) {
                                 ?>
                                     <small>Tanggal Bergabung : <?= $row['join_date']; ?></small>

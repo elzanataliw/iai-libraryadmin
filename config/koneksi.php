@@ -2,7 +2,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$database = "db_perpustakaan";
+$database = "book2";
 
 $koneksi = mysqli_connect($server, $username, $password, $database);
 

@@ -39,7 +39,7 @@
                         <?php
                         include "../../config/koneksi.php";
 
-                        $query = mysqli_query($koneksi, "SELECT * FROM identitas WHERE id_identitas = '1'");
+                        $query = mysqli_query($koneksi, "SELECT * FROM identity WHERE id_identitas = '1'");
                         $row = mysqli_fetch_assoc($query);
                         ?>
                         <div class="box-body">

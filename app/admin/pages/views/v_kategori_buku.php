@@ -52,7 +52,7 @@
                             include "../../config/koneksi.php";
 
                             $no = 1;
-                            $query = mysqli_query($koneksi, "SELECT * FROM kategori");
+                            $query = mysqli_query($koneksi, "SELECT * FROM categories");
                             while ($row = mysqli_fetch_assoc($query)) {
                             ?>
                                 <tbody>
@@ -60,25 +60,25 @@
                                         <td><?= $no++; ?></td>
                                         <td><?= $row['nama_kategori']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modalEditKategori<?php echo $row['id_kategori']; ?>"><i class="fa fa-edit"></i></a>
-                                            <a href="pages/function/Kategori.php?act=hapus&id=<?= $row['id_kategori']; ?>" class="btn btn-danger btn-sm btn-del" onclick="hapusAnggota()"><i class="fa fa-trash"></i></a>
+                                            <a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modalEditKategori<?php echo $row['id']; ?>"><i class="fa fa-edit"></i></a>
+                                            <a href="pages/function/Kategori.php?act=hapus&id=<?= $row['id']; ?>" class="btn btn-danger btn-sm btn-del" onclick="hapusAnggota()"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
-                                    <div class="modal fade" id="modalEditKategori<?php echo $row['id_kategori']; ?>">
+                                    <div class="modal fade" id="modalEditKategori<?php echo $row['id']; ?>">
                                         <div class="modal-dialog">
                                             <div class="modal-content" style="border-radius: 5px;">
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Edit Kategori ( <?= $row['kode_kategori']; ?> - <?= $row['nama_kategori']; ?> )</h4>
+                                                    <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Edit Kategori ( <?= $row['nama_kategori']; ?> )</h4>
                                                 </div>
                                                 <form action="pages/function/Kategori.php?act=edit" enctype="multipart/form-data" method="POST">
                                                     <div class="modal-body">
-                                                        <input type="hidden" value="<?= $row['id_kategori']; ?>" name="idKategori">
-                                                        <div class="form-group">
+                                                        <input type="hidden" value="<?= $row['id']; ?>" name="idKategori">
+                                                        <!-- <div class="form-group">
                                                             <label>Kode Kategori</label>
                                                             <input type="text" class="form-control" value="<?= $row['kode_kategori']; ?>" name="kodeKategori" readonly>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="form-group">
                                                             <label>Nama Kategori <small style="color: red;">* Wajib diisi</small></label>
                                                             <input type="text" class="form-control" value="<?= $row['nama_kategori']; ?>" name="namaKategori">
@@ -122,12 +122,12 @@
                     <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Tambah Kategori</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Kode Kategori</label>
                         <?php
                         include "../../config/koneksi.php";
 
-                        $query = mysqli_query($koneksi, "SELECT max(kode_kategori) as kodeKategoriTerakhirDB FROM kategori");
+                        $query = mysqli_query($koneksi, "SELECT max(kode_kategori) as kodeKategoriTerakhirDB FROM categories");
                         $data = mysqli_fetch_array($query);
                         $kodeKategoriTerakhir = $data['kodeKategoriTerakhirDB'];
 
@@ -146,7 +146,7 @@
                         $kodeKategori = $huruf . sprintf("%03s", $urutan);
                         ?>
                         <input type="text" class="form-control" value="<?= $kodeKategori; ?>" name="kodeKategori" readonly>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label>Nama Kategori <small style="color: red;">* Wajib diisi</small></label>
                         <input type="text" class="form-control" placeholder="Masukan Nama Kategori" name="namaKategori" required>

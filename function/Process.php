@@ -7,7 +7,7 @@ if ($_GET['aksi'] == "masuk") {
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
 
-    $data = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username' AND password = '$password'");
+    $data = mysqli_query($koneksi, "SELECT * FROM administrator WHERE username = '$username' AND password = '$password'");
 
     $cek = mysqli_num_rows($data);
 
@@ -30,7 +30,7 @@ if ($_GET['aksi'] == "masuk") {
             $tanggal = date('d-m-Y');
             $jam = date('H:i:s');
 
-            $query = "UPDATE user SET terakhir_login = '$tanggal ( $jam )'";
+            $query = "UPDATE administrator SET terakhir_login = '$tanggal ( $jam )'";
             $query .= "WHERE id_user = $id_user";
 
             $sql = mysqli_query($koneksi, $query);
@@ -51,7 +51,7 @@ if ($_GET['aksi'] == "masuk") {
             $tanggal = date('d-m-Y');
             $jam = date('H:i:s');
 
-            $query = "UPDATE user SET terakhir_login = '$tanggal ( $jam )'";
+            $query = "UPDATE administrator SET terakhir_login = '$tanggal ( $jam )'";
             $query .= "WHERE id_user = $id_user";
 
             $sql = mysqli_query($koneksi, $query);
@@ -84,7 +84,7 @@ if ($_GET['aksi'] == "masuk") {
     $role = "Anggota";
     $join_date = date('d-m-Y');
 
-    $query = mysqli_query($koneksi, "SELECT max(kode_user) as kodeTerakhir FROM user");
+    $query = mysqli_query($koneksi, "SELECT max(kode_user) as kodeTerakhir FROM administrator");
     $data = mysqli_fetch_array($query);
     $kodeTerakhir = $data['kodeTerakhir'];
 
@@ -102,7 +102,7 @@ if ($_GET['aksi'] == "masuk") {
     $huruf = "AP";
     $Anggota = $huruf . sprintf("%03s", $urutan);
 
-    $sql = "INSERT INTO user(kode_user,nis,fullname,username,password,kelas,alamat,verif,role,join_date)
+    $sql = "INSERT INTO administrator(kode_user,nis,fullname,username,password,kelas,alamat,verif,role,join_date)
             VALUES('" . $Anggota . "','" . $nis . "','" . $fullname . "','" . $username1 . "','" . $password . "','" . $kelas . "','" . $alamat . "','" . $verif . "','" . $role . "','" . $join_date . "')";
     $sql .= mysqli_query($koneksi, $sql);
 

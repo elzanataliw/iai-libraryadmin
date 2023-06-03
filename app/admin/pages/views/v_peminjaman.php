@@ -60,7 +60,7 @@
                                     <tr>
                                         <td><?= $no++; ?></td>
                                         <td><?= $row['nama_anggota']; ?></td>
-                                        <td><?= $row['judul_buku']; ?></td>
+                                        <td><?= $row['title']; ?></td>
                                         <td><?= $row['tanggal_peminjaman']; ?></td>
                                         <td><?= $row['tanggal_pengembalian']; ?></td>
                                         <td><?= $row['kondisi_buku_saat_dipinjam']; ?></td>

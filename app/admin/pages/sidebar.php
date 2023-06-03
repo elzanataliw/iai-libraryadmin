@@ -13,7 +13,7 @@
 
                 $id = $_SESSION['id_user'];
 
-                $query = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user = '$id'");
+                $query = mysqli_query($koneksi, "SELECT * FROM administrator WHERE id_user = '$id'");
                 $row = mysqli_fetch_array($query);
                 ?>
 

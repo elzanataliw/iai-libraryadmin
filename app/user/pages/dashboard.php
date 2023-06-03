@@ -46,7 +46,7 @@
         <?php
         include "../../config/koneksi.php";
 
-        $sql = mysqli_query($koneksi, "SELECT * FROM identitas");
+        $sql = mysqli_query($koneksi, "SELECT * FROM identity");
         $row1 = mysqli_fetch_assoc($sql);
         ?>
         <div class="alert alert-secondary" style="color: #383d41; background-color: #e2e3e5; border-color: #d6d8db;">
@@ -55,7 +55,7 @@
         <!-- -->
         <?php
         include "../../config/koneksi.php";
-        $query = mysqli_query($koneksi, "SELECT * FROM identitas");
+        $query = mysqli_query($koneksi, "SELECT * FROM identity");
         $row = mysqli_fetch_assoc($query);
 
         ?>

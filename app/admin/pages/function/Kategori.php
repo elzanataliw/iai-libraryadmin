@@ -3,10 +3,10 @@ session_start();
 include "../../../../config/koneksi.php";
 
 if ($_GET['act'] == "tambah") {
-    $kode_kategori = $_POST['kodeKategori'];
+    // $kode_kategori = $_POST['kodeKategori'];
     $nama_kategori = $_POST['namaKategori'];
 
-    $sql = "INSERT INTO kategori(kode_kategori,nama_kategori)VALUES('$kode_kategori','$nama_kategori')";
+    $sql = "INSERT INTO categories(nama_kategori)VALUES('$nama_kategori')";
     $sql .= mysqli_query($koneksi, $sql);
 
     if ($sql) {
@@ -17,11 +17,11 @@ if ($_GET['act'] == "tambah") {
         header("location: " . $_SERVER['HTTP_REFERER']);
     }
 } elseif ($_GET['act'] == "edit") {
-    $id_kategori = $_POST['idKategori'];
+    $id = $_POST['idKategori'];
     $nama_kategori = $_POST['namaKategori'];
 
-    $query = "UPDATE kategori SET nama_kategori = '$nama_kategori'";
-    $query .= "WHERE id_kategori = '$id_kategori'";
+    $query = "UPDATE categories SET nama_kategori = '$nama_kategori'";
+    $query .= "WHERE id = '$id'";
 
     $sql = mysqli_query($koneksi, $query);
 
@@ -33,9 +33,9 @@ if ($_GET['act'] == "tambah") {
         header("location: " . $_SERVER['HTTP_REFERER']);
     }
 } elseif ($_GET['act'] == "hapus") {
-    $id_kategori = $_GET['id'];
+    $id = $_GET['id'];
 
-    $sql = mysqli_query($koneksi, "DELETE FROM kategori WHERE id_kategori = '$id_kategori'");
+    $sql = mysqli_query($koneksi, "DELETE FROM categories WHERE id = '$id'");
 
     if ($sql) {
         $_SESSION['berhasil'] = "Kategori buku berhasil dihapus !";

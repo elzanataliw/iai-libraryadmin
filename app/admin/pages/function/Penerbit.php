@@ -7,7 +7,7 @@ if ($_GET['act'] == "tambah") {
     $nama_penerbit = $_POST['namaPenerbit'];
     $status = $_POST['sTatus'];
 
-    $sql = "INSERT INTO penerbit(kode_penerbit,nama_penerbit,verif_penerbit)
+    $sql = "INSERT INTO publisher(kode_penerbit,nama_penerbit,verif_penerbit)
             VALUES('" . $kode_penerbit . "','" . $nama_penerbit . "','" . $status . "')";
     $sql .= mysqli_query($koneksi, $sql);
 
@@ -23,7 +23,7 @@ if ($_GET['act'] == "tambah") {
     $nama_penerbit = $_POST['namaPenerbit'];
     $verif_penerbit = $_POST['sTatus'];
 
-    $query = "UPDATE penerbit SET nama_penerbit = '$nama_penerbit', verif_penerbit = '$verif_penerbit'";
+    $query = "UPDATE publisher SET nama_penerbit = '$nama_penerbit', verif_penerbit = '$verif_penerbit'";
     $query .= "WHERE id_penerbit = '$id_penerbit'";
     $sql = mysqli_query($koneksi, $query);
 
@@ -37,7 +37,7 @@ if ($_GET['act'] == "tambah") {
 } elseif ($_GET['act'] == "hapus") {
     $id_penerbit = $_GET['id'];
 
-    $sql = mysqli_query($koneksi, "DELETE FROM penerbit WHERE id_penerbit = '$id_penerbit'");
+    $sql = mysqli_query($koneksi, "DELETE FROM publisher WHERE id_penerbit = '$id_penerbit'");
 
     if ($sql) {
         $_SESSION['berhasil'] = "Data Penerbit berhasil dihapus !";

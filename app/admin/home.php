@@ -18,7 +18,7 @@ if ($_SESSION['level'] != "Admin") {
     <?php
     include "../../config/koneksi.php";
 
-    $sql = mysqli_query($koneksi, "SELECT * FROM identitas");
+    $sql = mysqli_query($koneksi, "SELECT * FROM identity");
     $row = mysqli_fetch_assoc($sql);
     ?>
     <title>Dashboard Admin | <?= $row['nama_app']; ?></title>

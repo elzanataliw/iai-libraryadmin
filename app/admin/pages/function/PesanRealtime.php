@@ -55,7 +55,7 @@ function GetPesan()
         $nama = $row_pesan1['pengirim'];
         $id2 = $_SESSION['id_user'];
 
-        $query_cek_verif = mysqli_query($koneksi, "SELECT * FROM user WHERE fullname = '$nama'");
+        $query_cek_verif = mysqli_query($koneksi, "SELECT * FROM administrator WHERE fullname = '$nama'");
         $row_cek = mysqli_fetch_array($query_cek_verif);
         if ($row_cek['verif'] == "Tidak") {
             echo "$row_pesan1[pengirim]";

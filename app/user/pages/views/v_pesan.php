@@ -165,7 +165,7 @@
                             include "../../config/koneksi.php";
 
                             $nama_saya = $_SESSION['fullname'];
-                            $sql = mysqli_query($koneksi, "SELECT * FROM user WHERE fullname != '$nama_saya' AND role = 'Admin'");
+                            $sql = mysqli_query($koneksi, "SELECT * FROM administrator WHERE fullname != '$nama_saya' AND role = 'Admin'");
                             while ($data = mysqli_fetch_array($sql)) {
                             ?>
                                 <option value="<?= $data['fullname']; ?>">[ <?= $data['kode_user']; ?> ] <?= $data['fullname']; ?> ( <?= $data['role']; ?> )</option>

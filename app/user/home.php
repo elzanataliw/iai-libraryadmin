@@ -15,7 +15,7 @@ if ($_SESSION['level'] != "Anggota") {
     <?php
     include "../../config/koneksi.php";
 
-    $sql = mysqli_query($koneksi, "SELECT * FROM identitas");
+    $sql = mysqli_query($koneksi, "SELECT * FROM identity");
     $row1 = mysqli_fetch_assoc($sql);
     ?>
     <title>Dashboard | <?= $row1['nama_app']; ?></title>

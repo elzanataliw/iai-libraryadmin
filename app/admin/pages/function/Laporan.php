@@ -17,7 +17,7 @@ if ($_GET['aksi'] == "tgl_pinjam") {
     echo "<img src='../../../../assets/dist/img/logo_app.png' style='height: 90px; width: 90px; margin-top: 10px; margin-left: 10px; margin-bottom: -50px;'>";
     echo "<img src='../../../../assets/dist/img/LOGO-PERPUSNAS.png' style='display: block; margin-left: auto; width: 90px; margin-bottom: -70px; margin-top: -38px; margin-right: 5px;'>";
     echo "<h3 class='text-center' style='font-family: Quicksand, sans-serif; margin-top: -30px;'>.:: Laporan Perpustakaan ::.</h3>";
-    $sql2 = mysqli_query($koneksi, "SELECT * FROM identitas");
+    $sql2 = mysqli_query($koneksi, "SELECT * FROM identity");
     $row = mysqli_fetch_assoc($sql2);
 
     echo "<p style='font-size: 12px;' class='text-center'>" . $row['alamat_app'] . "<br> Email : " . $row['email_app'] . " | Nomor Telpon : " . $row['nomor_hp'] . " </p>";
@@ -38,7 +38,7 @@ if ($_GET['aksi'] == "tgl_pinjam") {
         echo "<tr>";
         echo "<td>" . $no++ . "</td>";
         echo "<td>" . $row['nama_anggota'] . "</td>";
-        echo "<td>" . $row['judul_buku'] . "</td>";
+        echo "<td>" . $row['title'] . "</td>";
         echo "<td>" . $row['tanggal_peminjaman'] . "</td>";
         if ($row['tanggal_pengembalian'] == null) {
             echo "<td> - </td>";
@@ -70,7 +70,7 @@ if ($_GET['aksi'] == "tgl_pinjam") {
     echo "<img src='../../../../assets/dist/img/logo_app.png' style='height: 90px; width: 90px; margin-top: 10px; margin-left: 10px; margin-bottom: -50px;'>";
     echo "<img src='../../../../assets/dist/img/LOGO-PERPUSNAS.png' style='display: block; margin-left: auto; width: 90px; margin-bottom: -70px; margin-top: -38px; margin-right: 5px;'>";
     echo "<h3 class='text-center' style='font-family: Quicksand, sans-serif; margin-top: -30px;'>.:: Laporan Perpustakaan ::.</h3>";
-    $sql2 = mysqli_query($koneksi, "SELECT * FROM identitas");
+    $sql2 = mysqli_query($koneksi, "SELECT * FROM identity");
     $row = mysqli_fetch_assoc($sql2);
 
     echo "<p style='font-size: 12px;' class='text-center'>" . $row['alamat_app'] . "<br> Email : " . $row['email_app'] . " | Nomor Telpon : " . $row['nomor_hp'] . " </p>";
@@ -91,7 +91,7 @@ if ($_GET['aksi'] == "tgl_pinjam") {
         echo "<tr>";
         echo "<td>" . $no++ . "</td>";
         echo "<td>" . $row['nama_anggota'] . "</td>";
-        echo "<td>" . $row['judul_buku'] . "</td>";
+        echo "<td>" . $row['title'] . "</td>";
         echo "<td>" . $row['tanggal_peminjaman'] . "</td>";
         if ($row['tanggal_pengembalian'] == null) {
             echo "<td> - </td>";
@@ -123,7 +123,7 @@ if ($_GET['aksi'] == "tgl_pinjam") {
     echo "<img src='../../../../assets/dist/img/logo_app.png' style='height: 90px; width: 90px; margin-top: 10px; margin-left: 10px; margin-bottom: -50px;'>";
     echo "<img src='../../../../assets/dist/img/LOGO-PERPUSNAS.png' style='display: block; margin-left: auto; width: 90px; margin-bottom: -70px; margin-top: -38px; margin-right: 5px;'>";
     echo "<h3 class='text-center' style='font-family: Quicksand, sans-serif; margin-top: -30px;'>.:: Laporan Perpustakaan ::.</h3>";
-    $sql2 = mysqli_query($koneksi, "SELECT * FROM identitas");
+    $sql2 = mysqli_query($koneksi, "SELECT * FROM identity");
     $row = mysqli_fetch_assoc($sql2);
 
     echo "<p style='font-size: 12px;' class='text-center'>" . $row['alamat_app'] . "<br> Email : " . $row['email_app'] . " | Nomor Telpon : " . $row['nomor_hp'] . " </p>";
@@ -144,7 +144,7 @@ if ($_GET['aksi'] == "tgl_pinjam") {
         echo "<tr>";
         echo "<td>" . $no++ . "</td>";
         echo "<td>" . $row['nama_anggota'] . "</td>";
-        echo "<td>" . $row['judul_buku'] . "</td>";
+        echo "<td>" . $row['title'] . "</td>";
         echo "<td>" . $row['tanggal_peminjaman'] . "</td>";
         if ($row['tanggal_pengembalian'] == null) {
             echo "<td> - </td>";

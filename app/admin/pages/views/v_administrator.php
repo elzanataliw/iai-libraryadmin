@@ -54,7 +54,7 @@
                             include "../../config/koneksi.php";
 
                             $no = 1;
-                            $query = mysqli_query($koneksi, "SELECT * FROM user WHERE role = 'Admin'");
+                            $query = mysqli_query($koneksi, "SELECT * FROM administrator WHERE role = 'Admin'");
                             while ($row = mysqli_fetch_assoc($query)) {
                             ?>
                                 <tbody>

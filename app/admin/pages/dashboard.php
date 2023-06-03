@@ -37,7 +37,7 @@
                 <!-- small box -->
                 <!-- <?php
                 include "../../config/koneksi.php";
-                $query_anggota = mysqli_query($koneksi, "SELECT * FROM user WHERE role = 'Anggota'");
+                $query_anggota = mysqli_query($koneksi, "SELECT * FROM administrator WHERE role = 'Anggota'");
                 $row_anggota = mysqli_num_rows($query_anggota);
                 ?>
                 <div class="small-box bg-aqua">
@@ -57,7 +57,7 @@
                 <!-- small box -->
                 <?php
                 include "../../config/koneksi.php";
-                $query_buku = mysqli_query($koneksi, "SELECT * FROM buku");
+                $query_buku = mysqli_query($koneksi, "SELECT * FROM books");
                 $row_buku = mysqli_num_rows($query_buku);
                 ?>
                 <div class="center-content">
@@ -121,7 +121,7 @@
             <!-- -->
             <?php
             include "../../config/koneksi.php";
-            $query = mysqli_query($koneksi, "SELECT * FROM identitas");
+            $query = mysqli_query($koneksi, "SELECT * FROM identity");
             $row = mysqli_fetch_assoc($query);
 
             ?>

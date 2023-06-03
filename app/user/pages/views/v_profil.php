@@ -40,7 +40,7 @@
                         include "../../config/koneksi.php";
 
                         $id_user = $_SESSION['id_user'];
-                        $query = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user = '$id_user'");
+                        $query = mysqli_query($koneksi, "SELECT * FROM administrator WHERE id_user = '$id_user'");
                         $row = mysqli_fetch_assoc($query);
                         ?>
                         <div class="box-body">

@@ -53,7 +53,7 @@
                             include "../../config/koneksi.php";
 
                             $no = 1;
-                            $query = mysqli_query($koneksi, "SELECT * FROM penerbit");
+                            $query = mysqli_query($koneksi, "SELECT * FROM publisher");
                             while ($row = mysqli_fetch_assoc($query)) {
                             ?>
                                 <tbody>
@@ -160,7 +160,7 @@
                         <?php
                         include "../../config/koneksi.php";
 
-                        $query = mysqli_query($koneksi, "SELECT max(kode_penerbit) as kodeTerakhir FROM penerbit");
+                        $query = mysqli_query($koneksi, "SELECT max(kode_penerbit) as kodeTerakhir FROM publisher");
                         $data = mysqli_fetch_array($query);
                         $kodeTerakhir = $data['kodeTerakhir'];
 

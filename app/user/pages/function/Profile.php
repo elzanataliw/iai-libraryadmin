@@ -22,7 +22,7 @@ if ($_GET['aksi'] = "edit") {
 
         UpdateDataPesan();
 
-        $query = "UPDATE user SET nis = '$nis', fullname = '$fullname', username = '$username', password = '$password', kelas = '$kelas', alamat = '$alamat'";
+        $query = "UPDATE administrator SET nis = '$nis', fullname = '$fullname', username = '$username', password = '$password', kelas = '$kelas', alamat = '$alamat'";
         $query .= "WHERE id_user = $id_user";
 
         $sql = mysqli_query($koneksi, $query);

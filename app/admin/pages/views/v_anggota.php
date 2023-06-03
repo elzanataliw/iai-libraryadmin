@@ -55,7 +55,7 @@
                             include "../../config/koneksi.php";
 
                             $no = 1;
-                            $query = mysqli_query($koneksi, "SELECT * FROM user WHERE role = 'Anggota'");
+                            $query = mysqli_query($koneksi, "SELECT * FROM administrator WHERE role = 'Anggota'");
                             while ($row = mysqli_fetch_assoc($query)) {
                             ?>
                                 <tbody>
@@ -193,7 +193,7 @@
                         <?php
                         include "../../config/koneksi.php";
 
-                        $query = mysqli_query($koneksi, "SELECT max(kode_user) as kodeTerakhir FROM user");
+                        $query = mysqli_query($koneksi, "SELECT max(kode_user) as kodeTerakhir FROM administrator");
                         $data = mysqli_fetch_array($query);
                         $kodeTerakhir = $data['kodeTerakhir'];
 

@@ -10,7 +10,7 @@ session_start();
     <?php
     include "config/koneksi.php";
 
-    $sql = mysqli_query($koneksi, "SELECT * FROM identitas");
+    $sql = mysqli_query($koneksi, "SELECT * FROM identity");
     $row1 = mysqli_fetch_assoc($sql);
     ?>
     <title>Masuk | <?= $row1['nama_app']; ?></title>

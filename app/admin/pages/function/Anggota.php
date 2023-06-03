@@ -16,7 +16,7 @@ if ($_GET['aksi'] == "tambah") {
     $role = "Anggota";
     $join_date = date('d-m-Y');
 
-    $sql = "INSERT INTO user(kode_user,nis,fullname,username,password,kelas,alamat,verif,role,join_date)
+    $sql = "INSERT INTO administrator(kode_user,nis,fullname,username,password,kelas,alamat,verif,role,join_date)
         VALUES('" . $kode_anggota . "','" . $nis . "','" . $fullname . "','" . $username . "','" . $password . "','" . $kelas . "','" . $alamat . "','" . $verif . "','" . $role . "','" . $join_date . "')";
     $sql .= mysqli_query($koneksi, $sql);
 
@@ -37,7 +37,7 @@ if ($_GET['aksi'] == "tambah") {
     $kelas = htmlspecialchars(addslashes($_POST['kElas']));
     $alamat = htmlspecialchars(addslashes($_POST['aLamat']));
 
-    $query = "UPDATE user SET nis = '$nis', fullname = '$nama_lengkap', username = '$username', 
+    $query = "UPDATE administrator SET nis = '$nis', fullname = '$nama_lengkap', username = '$username', 
           password = '$password', kelas = '$kelas', alamat = '$alamat'";
 
     $query .= "WHERE id_user = '$id_user'";
@@ -54,7 +54,7 @@ if ($_GET['aksi'] == "tambah") {
 } else if ($_GET['aksi'] == "hapus") {
     $id_user = $_GET['id'];
 
-    $sql = mysqli_query($koneksi, "DELETE FROM user WHERE id_user = $id_user");
+    $sql = mysqli_query($koneksi, "DELETE FROM administrator WHERE id_user = $id_user");
 
     if ($sql) {
         $_SESSION['berhasil'] = "Anggota berhasil di hapus !";
