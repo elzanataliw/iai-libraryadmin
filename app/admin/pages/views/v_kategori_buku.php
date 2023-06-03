@@ -58,7 +58,7 @@
                                 <tbody>
                                     <tr>
                                         <td><?= $no++; ?></td>
-                                        <td><?= $row['nama_kategori']; ?></td>
+                                        <td><?= $row['name']; ?></td>
                                         <td>
                                             <a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modalEditKategori<?php echo $row['id']; ?>"><i class="fa fa-edit"></i></a>
                                             <a href="pages/function/Kategori.php?act=hapus&id=<?= $row['id']; ?>" class="btn btn-danger btn-sm btn-del" onclick="hapusAnggota()"><i class="fa fa-trash"></i></a>
@@ -70,7 +70,7 @@
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Edit Kategori ( <?= $row['nama_kategori']; ?> )</h4>
+                                                    <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Edit Kategori ( <?= $row['name']; ?> )</h4>
                                                 </div>
                                                 <form action="pages/function/Kategori.php?act=edit" enctype="multipart/form-data" method="POST">
                                                     <div class="modal-body">
@@ -81,7 +81,7 @@
                                                         </div> -->
                                                         <div class="form-group">
                                                             <label>Nama Kategori <small style="color: red;">* Wajib diisi</small></label>
-                                                            <input type="text" class="form-control" value="<?= $row['nama_kategori']; ?>" name="namaKategori">
+                                                            <input type="text" class="form-control" value="<?= $row['name']; ?>" name="namaKategori">
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">

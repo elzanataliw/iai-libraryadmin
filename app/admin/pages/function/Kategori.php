@@ -4,9 +4,9 @@ include "../../../../config/koneksi.php";
 
 if ($_GET['act'] == "tambah") {
     // $kode_kategori = $_POST['kodeKategori'];
-    $nama_kategori = $_POST['namaKategori'];
+    $name = $_POST['namaKategori'];
 
-    $sql = "INSERT INTO categories(nama_kategori)VALUES('$nama_kategori')";
+    $sql = "INSERT INTO categories(name)VALUES('$name')";
     $sql .= mysqli_query($koneksi, $sql);
 
     if ($sql) {
@@ -18,9 +18,9 @@ if ($_GET['act'] == "tambah") {
     }
 } elseif ($_GET['act'] == "edit") {
     $id = $_POST['idKategori'];
-    $nama_kategori = $_POST['namaKategori'];
+    $name = $_POST['namaKategori'];
 
-    $query = "UPDATE categories SET nama_kategori = '$nama_kategori'";
+    $query = "UPDATE categories SET name = '$name'";
     $query .= "WHERE id = '$id'";
 
     $sql = mysqli_query($koneksi, $query);

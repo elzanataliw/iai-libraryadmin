@@ -104,7 +104,7 @@
                                                                 $sql = mysqli_query($koneksi, "SELECT * FROM categories");
                                                                 while ($data = mysqli_fetch_array($sql)) {
                                                                 ?>
-                                                                    <option value="<?= $data['nama_kategori']; ?>"> <?= $data['nama_kategori']; ?></option>
+                                                                    <option value="<?= $data['name']; ?>"> <?= $data['name']; ?></option>
                                                                 <?php
                                                                 }
                                                                 ?>
@@ -197,7 +197,7 @@
                             $sql = mysqli_query($koneksi, "SELECT * FROM categories");
                             while ($data = mysqli_fetch_array($sql)) {
                             ?>
-                                <option value="<?= $data['nama_kategori']; ?>"> <?= $data['nama_kategori']; ?></option>
+                                <option value="<?= $data['name']; ?>"> <?= $data['name']; ?></option>
                             <?php
                             }
                             ?>
