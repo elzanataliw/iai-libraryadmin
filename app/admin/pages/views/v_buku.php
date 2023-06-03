@@ -113,7 +113,16 @@
                                                         <div class="form-group">
                                                             <label>Penerbit Buku <small style="color: red;">* Wajib diisi</small></label>
                                                             <select class="form-control select2" name="penerbitBuku">
-                                                                <option selected value="<?= $row['publisher']; ?>"><?= $row['publisher']; ?> ( Dipilih Sebelumnya )</option>
+                                                                <?php
+                                                                include "../../config/koneksi.php";
+
+                                                                $sql = mysqli_query($koneksi, "SELECT * FROM publisher WHERE id_penerbit = '$row[publisher_id]'");
+                                                                $data = mysqli_fetch_array($sql)
+                                                                ?>
+                                                                    <option selected value="<?= $data['nama_penerbit']; ?>"><?= $data['nama_penerbit']; ?> (Dipilih Sebelumnya)</option>
+                                                                <?php
+                                                                ?>
+                                                                <!-- <option selected value="<?= $row['publisher']; ?>"><?= $row['publisher']; ?> ( Dipilih Sebelumnya )</option> -->
                                                                 <?php
                                                                 include "../../config/koneksi.php";
 
@@ -129,7 +138,16 @@
                                                         <div class="form-group">
                                                             <label>Pengarang Buku <small style="color: red;">* Wajib diisi</small></label>
                                                             <select class="form-control select2" name="pengarangBuku">
-                                                                <option selected value="<?= $row['author_id']; ?>"><?= $row['author_id']; ?> ( Dipilih Sebelumnya )</option>
+                                                                <?php
+                                                                include "../../config/koneksi.php";
+
+                                                                $sql = mysqli_query($koneksi, "SELECT * FROM authors WHERE id = '$row[author_id]'");
+                                                                $data = mysqli_fetch_array($sql)
+                                                                ?>
+                                                                    <option selected value="<?= $data['name']; ?>"><?= $data['name']; ?> (Dipilih Sebelumnya)</option>
+                                                                <?php
+                                                                ?>
+                                                                <!-- <option selected value="<?= $row['author_id']; ?>"><?= $row['author_id']; ?> ( Dipilih Sebelumnya )</option> -->
                                                                 <?php
                                                                 include "../../config/koneksi.php";
 
