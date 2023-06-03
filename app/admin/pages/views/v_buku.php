@@ -54,17 +54,23 @@
                             </thead>
                             <?php
                             include "../../config/koneksi.php";
-
+    
                             $no = 1;
                             $query = mysqli_query($koneksi, "SELECT * FROM books");
                             while ($row = mysqli_fetch_assoc($query)) {
                             ?>
+                            
+                    
                                 <tbody>
                                     <tr>
                                         <td><?= $no++; ?></td>
                                         <td><?= $row['title']; ?></td>
-                                        <td><?= $row['author_id']; ?></td>
-                                        <td><?= $row['publisher']; ?></td>
+                                        <?php 
+                                        include "../../config/koneksi.php";
+                                        $author = mysqli_query($koneksi, "SELECT * FROM authors WHERE id='$row[author_id]'"); 
+                                        $author_row =  mysqli_fetch_assoc($author)?>
+                                        <td><?= $author_row['name']; ?></td>
+                                        <td><?= $row['publisher_id']; ?></td>
                                         <td><?= $row['stock']; ?></td>
                                         <!-- <td><?= $row['j_buku_rusak']; ?></td> -->
                                         <td><?php
