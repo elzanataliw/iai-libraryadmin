@@ -35,6 +35,7 @@
             <li><a href="data-buku"><i class="fa fa-book"></i> <span>Data Buku</span></a></li>
             <li><a href="kategori-buku"><i class="fa fa-tags"></i> <span>Data Kategori Buku</span></a></li>
             <li><a href="penerbit"><i class="fa fa-building"></i> <span>Data Penerbit</span></a></li>
+            <li><a href="pengarang"><i class="fa fa-user"></i> <span>Data Pengarang</span></a></li>
             <li><a href="administrator"><i class="fa fa-users"></i> <span>Administrator</span></a></li>
             <!-- <li class="treeview">
                 <a href="#">

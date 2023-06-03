@@ -63,7 +63,7 @@
                                     <tr>
                                         <td><?= $no++; ?></td>
                                         <td><?= $row['title']; ?></td>
-                                        <td><?= $row['pengarang_buku']; ?></td>
+                                        <td><?= $row['author_id']; ?></td>
                                         <td><?= $row['publisher']; ?></td>
                                         <td><?= $row['stock']; ?></td>
                                         <!-- <td><?= $row['j_buku_rusak']; ?></td> -->
@@ -127,8 +127,20 @@
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Pengarang <small style="color: red;">* Wajib diisi</small></label>
-                                                            <input type="text" class="form-control" value="<?= $row['pengarang_buku']; ?>" name="pengarang" required>
+                                                            <label>Pengarang Buku <small style="color: red;">* Wajib diisi</small></label>
+                                                            <select class="form-control select2" name="pengarangBuku">
+                                                                <option selected value="<?= $row['author_id']; ?>"><?= $row['author_id']; ?> ( Dipilih Sebelumnya )</option>
+                                                                <?php
+                                                                include "../../config/koneksi.php";
+
+                                                                $sql = mysqli_query($koneksi, "SELECT * FROM authors");
+                                                                while ($data = mysqli_fetch_array($sql)) {
+                                                                ?>
+                                                                    <option value="<?= $data['name']; ?>"><?= $data['name']; ?></option>
+                                                                <?php
+                                                                }
+                                                                ?>
+                                                            </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Tahun Terbit <small style="color: red;">* Wajib diisi</small></label>
@@ -220,8 +232,20 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Pengarang <small style="color: red;">* Wajib diisi</small></label>
-                        <input type="text" class="form-control" placeholder="Masukan Nama Pengarang" name="pengarang" required>
+                        <label>Pengarang Buku <small style="color: red;">* Wajib diisi</small></label>
+                        <select class="form-control select2" name="pengarangBuku">
+                            <option selected disabled>-- Harap Pilih Pengarang Buku --</option>
+                            <?php
+                            include "../../config/koneksi.php";
+
+                            $sql = mysqli_query($koneksi, "SELECT * FROM authors");
+                            while ($data = mysqli_fetch_array($sql)) {
+                            ?>
+                                <option value="<?= $data['name']; ?>"><?= $data['name']; ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Tahun Terbit <small style="color: red;">* Wajib diisi</small></label>
