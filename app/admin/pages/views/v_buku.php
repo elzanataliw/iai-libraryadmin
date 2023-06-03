@@ -56,7 +56,7 @@
                             include "../../config/koneksi.php";
 
                             $no = 1;
-                            $query = mysqli_query($koneksi, "SELECT * FROM buku");
+                            $query = mysqli_query($koneksi, "SELECT * FROM books");
                             while ($row = mysqli_fetch_assoc($query)) {
                             ?>
                                 <tbody>

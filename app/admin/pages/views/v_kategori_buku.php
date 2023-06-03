@@ -122,31 +122,7 @@
                     <h4 class="modal-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Tambah Kategori</h4>
                 </div>
                 <div class="modal-body">
-                    <!-- <div class="form-group">
-                        <label>Kode Kategori</label>
-                        <?php
-                        include "../../config/koneksi.php";
-
-                        $query = mysqli_query($koneksi, "SELECT max(kode_kategori) as kodeKategoriTerakhirDB FROM categories");
-                        $data = mysqli_fetch_array($query);
-                        $kodeKategoriTerakhir = $data['kodeKategoriTerakhirDB'];
-
-                        // mengambil angka dari kode barang terbesar, menggunakan fungsi substr
-                        // dan diubah ke integer dengan (int)
-                        $urutan = (int) substr($kodeKategoriTerakhir, 3, 3);
-
-                        // bilangan yang diambil ini ditambah 1 untuk menentukan nomor urut berikutnya
-                        $urutan++;
-
-                        // membentuk kode barang baru
-                        // perintah sprintf("%03s", $urutan); berguna untuk membuat string menjadi 3 karakter
-                        // misalnya perintah sprintf("%03s", 15); maka akan menghasilkan '015'
-                        // angka yang diambil tadi digabungkan dengan kode huruf yang kita inginkan, misalnya BRG 
-                        $huruf = "KT-";
-                        $kodeKategori = $huruf . sprintf("%03s", $urutan);
-                        ?>
-                        <input type="text" class="form-control" value="<?= $kodeKategori; ?>" name="kodeKategori" readonly>
-                    </div> -->
+                    
                     <div class="form-group">
                         <label>Nama Kategori <small style="color: red;">* Wajib diisi</small></label>
                         <input type="text" class="form-control" placeholder="Masukan Nama Kategori" name="namaKategori" required>

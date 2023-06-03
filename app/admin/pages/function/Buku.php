@@ -13,7 +13,7 @@ if ($_GET['act'] == "tambah") {
     // $j_buku_rusak = $_POST['jumlahBukuRusak'];
 
     // PROCESS INSERT DATA TO DATABASE
-    $sql = "INSERT INTO buku(title,kategori_buku,publisher,pengarang_buku,year_published,isbn,stock)
+    $sql = "INSERT INTO books(title,kategori_buku,publisher,pengarang_buku,year_published,isbn,stock)
         VALUES('" . $title . "','" . $kategori_buku . "','" . $publisher . "','" . $pengarang_buku . "','" . $year_published . "','" . $isbn . "', '" . $stock . "')";
     $sql .= mysqli_query($koneksi, $sql);
 
@@ -36,7 +36,7 @@ if ($_GET['act'] == "tambah") {
     // $j_buku_rusak = $_POST['jumlahBukuRusak'];
 
     // PROCESS EDIT DATA
-    $query = "UPDATE buku SET title = '$title', kategori_buku = '$kategori_buku', publisher = '$publisher', 
+    $query = "UPDATE books SET title = '$title', kategori_buku = '$kategori_buku', publisher = '$publisher', 
                 pengarang_buku = '$pengarang_buku', year_published = '$year_published', isbn = '$isbn', stock = '$stock'";
 
     $query .= "WHERE id = $id";
@@ -52,7 +52,7 @@ if ($_GET['act'] == "tambah") {
 } elseif ($_GET['act'] == "hapus") {
     $id = $_GET['id'];
 
-    $sql = mysqli_query($koneksi, "DELETE FROM buku WHERE id = '$id'");
+    $sql = mysqli_query($koneksi, "DELETE FROM books WHERE id = '$id'");
 
     if ($sql) {
         $_SESSION['berhasil'] = "Data buku berhasil di hapus !";
