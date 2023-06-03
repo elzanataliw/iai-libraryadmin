@@ -58,7 +58,7 @@ CREATE TABLE `identitas` (
 --
 
 INSERT INTO `identitas` (`id_identitas`, `nama_app`, `alamat_app`, `email_app`, `nomor_hp`) VALUES
-(1, 'E - Perpus', 'JL. Parakan Saat No. 20A ', 'contact@e-perpus.com', '0228298492');
+(1, 'Lib.io', 'Yogyakarta', 'contact@lib.io.com', '08123456789');
 
 -- --------------------------------------------------------
 

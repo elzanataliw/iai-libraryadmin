@@ -63,7 +63,7 @@
         <img src="../../assets/dist/img/logo_app.png" width="120px" height="120px" style="display: block; margin-left: auto; margin-right: auto; margin-top: 100px;">
 
         <h1 class="text-center"><?= $row['nama_app']; ?></h1>
-        <p class="text-center">Alamat : <?= $row['alamat_app']; ?>| Email : <?= $row['email_app']; ?> | Nomor Telpon : <?= $row['nomor_hp']; ?> </p>
+        <p class="text-center">Alamat : <?= $row['alamat_app']; ?> | Email : <?= $row['email_app']; ?> | Nomor Telpon : <?= $row['nomor_hp']; ?> </p>
     </section>
     <!-- /.content -->
 </div>

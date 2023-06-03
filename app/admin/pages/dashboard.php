@@ -29,7 +29,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="alert alert-secondary" style="color: #383d41; background-color: #e2e3e5; border-color: #d6d8db;">
-            Selamat Datang, <?= $_SESSION['fullname']; ?> di Administrator Perpustakaan LTE CS.
+            Selamat Datang, <?= $_SESSION['fullname']; ?> di Lib.io Admin Library.
         </div>
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -129,7 +129,7 @@
             <img src="../../assets/dist/img/logo_app.png" width="120px" height="120px" style="display: block; margin-left: auto; margin-right: auto; margin-top: 30px; margin-bottom: -20px;">
 
             <h2 class="text-center" style="font-family: Quicksand, sans-serif;"><?= $row['nama_app']; ?></h2>
-            <p class="text-center">Alamat : <?= $row['alamat_app']; ?>| Email : <?= $row['email_app']; ?> | Nomor Telpon : <?= $row['nomor_hp']; ?> </p>
+            <p class="text-center">Alamat : <?= $row['alamat_app']; ?> | Email : <?= $row['email_app']; ?> | Nomor Telpon : <?= $row['nomor_hp']; ?> </p>
 
         </div>
     </section>
