@@ -43,8 +43,3 @@
         </div>
     </div>
 </div>
-<script>
-    var refreshId = setInterval(function() {
-        $('#jumlahPesan').load('./pages/function/Pesan.php?aksi=jumlahPesan');
-    }, 500);
-</script>

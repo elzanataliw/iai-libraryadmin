@@ -65,7 +65,7 @@ if ($_GET['act'] == "tambah") {
     $query = "UPDATE books SET title = '$title', description = '$description_buku', category_id = '$category_row[id]', publisher_id = '$publish_row[id_penerbit]', 
                 author_id = '$author_row[id]', year_published = '$year_published', isbn = '$isbn', stock = '$stock', cover = '$cover', file = '$files'";
 
-    $query .= "WHERE id = $id";
+    $query .= "WHERE id = '$id'";
 
     $sql = mysqli_query($koneksi, $query);
     if ($sql) {
