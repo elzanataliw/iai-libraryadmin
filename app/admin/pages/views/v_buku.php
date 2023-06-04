@@ -44,6 +44,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Judul Buku</th>
+                                    <th>Deskripsi</th>
                                     <th>Pengarang</th>
                                     <th>Kategori Buku</th>
                                     <th>Penerbit</th>
@@ -51,6 +52,8 @@
                                     <th>Tahun Terbit</th>
                                     <!-- <th>Buku Baik</th> -->
                                     <th>Jumlah Buku</th>
+                                    <th>Cover Buku</th>
+                                    <th>File Buku</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -67,6 +70,7 @@
                                     <tr>
                                         <td><?= $no++; ?></td>
                                         <td><?= $row['title']; ?></td>
+                                        <td><?= $row['description']; ?></td>
                                         <?php 
                                         include "../../config/koneksi.php";
                                         $author = mysqli_query($koneksi, "SELECT * FROM authors WHERE id='$row[author_id]'"); 
@@ -89,9 +93,10 @@
                                         <td><?php
                                             // $j_buku_rusak = $row['j_buku_rusak'];
                                             $stock = $row['stock'];
-
                                             echo $stock;
                                             ?></td>
+                                        <td><?= $row['cover']; ?></td>
+                                        <td><?= $row['file']; ?></td>
                                         <td>
                                             <a href="#" data-target="#modalEditBuku<?= $row['id']; ?>" data-toggle="modal" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                             <a href="pages/function/Buku.php?act=hapus&id=<?= $row['id']; ?>" class="btn btn-danger btn-sm btn-del"><i class="fa fa-trash"></i></a>
@@ -112,6 +117,11 @@
                                                         <div class="form-group">
                                                             <label>Judul Buku <small style="color: red;">* Wajib diisi</small></label>
                                                             <input type="text" class="form-control" value="<?= $row['title']; ?>" name="judulBuku">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Deskripsi <small style="color: red;">* Wajib diisi</small></label>
+                                                            <!-- <input type="text" class="form-control" value="<?= $row['Description']; ?>" name="judulBuku"> -->
+                                                            <textarea class="form-control" name="deskripsiBuku"><?= $row['description']; ?></textarea>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Kategori Buku <small style="color: red;">* Wajib diisi</small></label>
@@ -197,8 +207,16 @@
                                                             <input type="number" class="form-control" value="<?= $row['isbn']; ?>" name="iSbn" required>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Jumlah Buku Baik <small style="color: red;">* Wajib diisi</small></label>
+                                                            <label>Jumlah Buku <small style="color: red;">* Wajib diisi</small></label>
                                                             <input type="number" class="form-control" value="<?= $row['stock']; ?>" name="jumlahBukuBaik" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Cover <small style="color: red;">* Wajib diisi</small></label>
+                                                            <input type="text" class="form-control" value="<?= $row['cover']; ?>" name="coverBuku">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>File <small style="color: red;">* Wajib diisi</small></label>
+                                                            <input type="text" class="form-control" value="<?= $row['file']; ?>" name="fileBuku">
                                                         </div>
                                                         <!-- <div class="form-group">
                                                             <label>Jumlah Buku Rusak <small style="color: red;">* Wajib diisi</small></label>
@@ -244,6 +262,10 @@
                     <div class="form-group">
                         <label>Judul Buku <small style="color: red;">* Wajib diisi</small></label>
                         <input type="text" class="form-control" placeholder="Masukan Judul Buku" name="judulBuku">
+                    </div>
+                    <div class="form-group">
+                        <label>Deskripsi Buku <small style="color: red;">* Wajib diisi</small></label>
+                        <textarea class="form-control" placeholder="Masukkan Deskripsi Buku" name="deskripsiBuku"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Kategori Buku <small style="color: red;">* Wajib diisi</small></label>
@@ -302,8 +324,16 @@
                         <input type="number" class="form-control" placeholder="Masukan ISBN" name="iSbn" required>
                     </div>
                     <div class="form-group">
-                        <label>Jumlah Buku Baik <small style="color: red;">* Wajib diisi</small></label>
-                        <input type="number" class="form-control" placeholder="Masukan Jumlah Buku Baik" name="jumlahBukuBaik" required>
+                        <label>Jumlah Buku <small style="color: red;">* Wajib diisi</small></label>
+                        <input type="number" class="form-control" placeholder="Masukan Jumlah Buku" name="jumlahBukuBaik" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Cover Buku <small style="color: red;">* Wajib diisi</small></label>
+                        <input type="text" class="form-control" placeholder="Masukan Cover Buku" name="coverBuku">
+                    </div>
+                    <div class="form-group">
+                        <label>File Buku <small style="color: red;">* Wajib diisi</small></label>
+                        <input type="text" class="form-control" placeholder="Masukan File Buku" name="fileBuku">
                     </div>
                     <!-- <div class="form-group">
                         <label>Jumlah Buku Rusak <small style="color: red;">* Wajib diisi</small></label>

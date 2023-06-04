@@ -4,12 +4,16 @@ include "../../../../config/koneksi.php";
 
 if ($_GET['act'] == "tambah") {
     $title = $_POST['judulBuku'];
+    $description_buku = $_POST['deskripsiBuku'];
     $kategori_buku = $_POST['kategoriBuku'];
     $publisher = $_POST['penerbitBuku'];
     $pengarang_buku = $_POST['pengarangBuku'];
     $year_published = $_POST['tahunTerbit'];
     $isbn = $_POST['iSbn'];
     $stock = $_POST['jumlahBukuBaik'];
+    $cover = $_POST['coverBuku'];
+    $files = $_POST['fileBuku'];
+
     // $j_buku_rusak = $_POST['jumlahBukuRusak'];
 
     // PROCESS INSERT DATA TO DATABASE
@@ -23,8 +27,8 @@ if ($_GET['act'] == "tambah") {
     $category = mysqli_query($koneksi, "SELECT * FROM categories WHERE name ='$kategori_buku'"); 
     $category_row =  mysqli_fetch_assoc($category);
 
-    $sql = "INSERT INTO books(title,category_id,publisher_id,author_id,year_published,isbn,stock)
-        VALUES('" . $title . "','" . $category_row['id'] . "','" . $publish_row['id_penerbit'] . "','" . $author_row['id'] . "','" . $year_published . "','" . $isbn . "', '" . $stock . "')";
+    $sql = "INSERT INTO books(title,description,category_id,publisher_id,author_id,year_published,isbn,stock,cover,file)
+        VALUES('" . $title . "', '" . $description_buku . "', '" . $category_row['id'] . "','" . $publish_row['id_penerbit'] . "','" . $author_row['id'] . "','" . $year_published . "','" . $isbn . "', '" . $stock . "', '" . $cover . "', '" . $files . "')";
     $sql .= mysqli_query($koneksi, $sql);
 
     if ($sql) {
@@ -37,12 +41,15 @@ if ($_GET['act'] == "tambah") {
 } elseif ($_GET['act'] == "edit") {
     $id = $_POST['id'];
     $title = $_POST['judulBuku'];
+    $description_buku = $_POST['deskripsiBuku'];
     $kategori_buku = $_POST['kategoriBuku'];
     $publisher = $_POST['penerbitBuku'];
     $pengarang_buku = $_POST['pengarangBuku'];
     $year_published = $_POST['tahunTerbit'];
     $isbn = $_POST['iSbn'];
     $stock = $_POST['jumlahBukuBaik'];
+    $cover = $_POST['coverBuku'];
+    $files = $_POST['fileBuku'];
     // $j_buku_rusak = $_POST['jumlahBukuRusak'];
 
     // PROCESS EDIT DATA
@@ -55,8 +62,8 @@ if ($_GET['act'] == "tambah") {
     $category = mysqli_query($koneksi, "SELECT * FROM categories WHERE name ='$kategori_buku'"); 
     $category_row =  mysqli_fetch_assoc($category);
 
-    $query = "UPDATE books SET title = '$title', category_id = '$category_row[id]', publisher_id = '$publish_row[id_penerbit]', 
-                author_id = '$author_row[id]', year_published = '$year_published', isbn = '$isbn', stock = '$stock'";
+    $query = "UPDATE books SET title = '$title', description = '$description_buku', category_id = '$category_row[id]', publisher_id = '$publish_row[id_penerbit]', 
+                author_id = '$author_row[id]', year_published = '$year_published', isbn = '$isbn', stock = '$stock', cover = '$cover', file = '$files'";
 
     $query .= "WHERE id = $id";
 
