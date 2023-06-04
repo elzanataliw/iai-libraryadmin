@@ -33,8 +33,16 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Data Buku</h3>
-                        <div class="form-group m-b-2 text-right" style="margin-top: -20px; margin-bottom: -5px;">
+                        <!-- <div class="form-group m-b-2 text-right" style="margin-top: -20px; margin-bottom: -5px;">
                             <button type="button" onclick="tambahBuku()" class="btn btn-info"><i class="fa fa-plus"></i> Tambah Buku</button>
+                        </div> -->
+                        <div class="form-group m-b-2 text-right" style="margin-top: -20px; margin-bottom: -5px;">
+                            <style>
+                                .btn-info:hover {
+                                    background-color: #24BC83;
+                                }
+                            </style>
+                        <button type="button" onclick="tambahBuku()" class="btn btn-info"><i class="fa fa-plus"></i> Tambah Buku</button>
                         </div>
                     </div>
                     <!-- /.box-header -->
