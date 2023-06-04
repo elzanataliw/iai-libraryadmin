@@ -97,10 +97,17 @@
                                             ?></td>
                                         <td><?= $row['cover']; ?></td>
                                         <td><?= $row['file']; ?></td>
-                                        <td>
+                                        <!-- <td>
                                             <a href="#" data-target="#modalEditBuku<?= $row['id']; ?>" data-toggle="modal" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                             <a href="pages/function/Buku.php?act=hapus&id=<?= $row['id']; ?>" class="btn btn-danger btn-sm btn-del"><i class="fa fa-trash"></i></a>
+                                        </td> -->
+                                        <td>
+                                            <div class="btn-group-vertical">
+                                                <a href="#" data-target="#modalEditBuku<?= $row['id']; ?>" data-toggle="modal" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                                                <a href="pages/function/Buku.php?act=hapus&id=<?= $row['id']; ?>" class="btn btn-danger btn-sm btn-del"><i class="fa fa-trash"></i></a>
+                                            </div>
                                         </td>
+
                                     </tr>
                                     <!-- Modal Edit -->
                                     <div class="modal fade" id="modalEditBuku<?= $row['id']; ?>">

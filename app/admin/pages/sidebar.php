@@ -1,4 +1,4 @@
-<aside class="main-sidebar">
+<aside class="main-sidebar" style="background-color: #235D69;">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar" style="background-color: #235D69;">
         <!-- Sidebar user panel -->
@@ -18,28 +18,26 @@
                 ?>
 
                 <?php
-
                 if ($row['verif'] == "Iya") {
                     echo "<a><i class='fa fa-check-circle text-info'></i> Akun Terverifikasi</a>";
                 } else {
                     echo "<a><i class='fa fa-exclamation text-danger'></i> Tidak Diketahui </a>";
                 }
-
                 ?>
             </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header" style="font-weight: bold;">MAIN MENU</li>
-            <li><a href="dashboard"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-            <li><a href="data-buku"><i class="fa fa-book"></i> <span>Data Buku</span></a></li>
-            <li><a href="kategori-buku"><i class="fa fa-tags"></i> <span>Data Kategori Buku</span></a></li>
-            <li><a href="penerbit"><i class="fa fa-building"></i> <span>Data Penerbit</span></a></li>
-            <li><a href="pengarang"><i class="fa fa-user"></i> <span>Data Pengarang</span></a></li>
-            <li><a href="administrator"><i class="fa fa-users"></i> <span>Administrator</span></a></li>
+            <li class="header" style="font-weight: bold; color: white;">MAIN MENU</li>
+            <li><a href="dashboard" style="color: white;"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+            <li><a href="data-buku" style="color: white;"><i class="fa fa-book"></i> <span>Data Buku</span></a></li>
+            <li><a href="kategori-buku" style="color: white;"><i class="fa fa-tags"></i> <span>Data Kategori Buku</span></a></li>
+            <li><a href="penerbit" style="color: white;"><i class="fa fa-building"></i> <span>Data Penerbit</span></a></li>
+            <li><a href="pengarang" style="color: white;"><i class="fa fa-user"></i> <span>Data Pengarang</span></a></li>
+            <li><a href="administrator" style="color: white;"><i class="fa fa-users"></i> <span>Administrator</span></a></li>
                 <!-- </a></li> -->
             <!-- <li class="header">LANJUTAN</li> -->
-            <li><a href="#Logout" data-toggle="modal" data-target="#modalLogoutConfirm"><i class="fa fa-sign-out"></i> <span>Keluar</span></a></li>
+            <li><a href="#Logout" data-toggle="modal" data-target="#modalLogoutConfirm" style="color: white;"><i class="fa fa-sign-out"></i> <span>Keluar</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->

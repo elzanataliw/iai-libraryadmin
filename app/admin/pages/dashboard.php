@@ -29,7 +29,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="alert alert-secondary" style="color: #383d41; background-color: #e2e3e5; border-color: #d6d8db;">
-            Selamat Datang, <?= $_SESSION['fullname']; ?> di Lib.io Admin Library.
+            <strong>Selamat Datang, <?= $_SESSION['fullname']; ?> di Lib.io Admin Library.</strong>
         </div>
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -61,7 +61,7 @@
                 $row_buku = mysqli_num_rows($query_buku);
                 ?>
                 <div class="center-content">
-                    <div class="small-box bg-green">
+                    <div class="small-box" style="background-color: #5ACAA0;">
                         <div class="inner">
                             <h3><?= $row_buku; ?></h3>
 
