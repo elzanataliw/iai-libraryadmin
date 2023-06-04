@@ -1,8 +1,8 @@
 <?php
 session_start();
 include "../../../../config/koneksi.php";
-include "Peminjaman.php";
-include "Pesan.php";
+// include "Peminjaman.php";
+// include "Pesan.php";
 
 if ($_GET['aksi'] = "edit") {
     $id_user = $_POST['IdUser'];
@@ -18,9 +18,9 @@ if ($_GET['aksi'] = "edit") {
         header("location: " . $_SERVER['HTTP_REFERER']);
     } else {
 
-        UpdateDataPeminjaman();
+        // UpdateDataPeminjaman();
 
-        UpdateDataPesan();
+        // UpdateDataPesan();
 
         $query = "UPDATE administrator SET nis = '$nis', fullname = '$fullname', username = '$username', password = '$password', kelas = '$kelas', alamat = '$alamat'";
         $query .= "WHERE id_user = $id_user";

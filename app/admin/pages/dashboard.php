@@ -78,10 +78,10 @@
             <!-- <div class="col-lg-3 col-xs-6"> -->
                 <!-- small box -->
                 <!-- <?php
-                include "../../config/koneksi.php";
-                $query_peminjaman = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE tanggal_peminjaman > 0");
-                $row_peminjaman = mysqli_num_rows($query_peminjaman);
-                ?>
+                // include "../../config/koneksi.php";
+                // $query_peminjaman = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE tanggal_peminjaman > 0");
+                // $row_peminjaman = mysqli_num_rows($query_peminjaman);
+                // ?>
                 <div class="small-box bg-yellow">
                     <div class="inner">
                         <h3><?= $row_peminjaman; ?></h3>
@@ -98,10 +98,10 @@
             <!-- <div class="col-lg-3 col-xs-6"> -->
                 <!-- small box -->
                 <!-- <?php
-                include "../../config/koneksi.php";
-                $query_pengembalian = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE tanggal_pengembalian > 0");
-                $row_pengembalian = mysqli_num_rows($query_pengembalian);
-                ?>
+                // include "../../config/koneksi.php";
+                // $query_pengembalian = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE tanggal_pengembalian > 0");
+                // $row_pengembalian = mysqli_num_rows($query_pengembalian);
+                // ?>
                 <div class="small-box bg-red">
                     <div class="inner">
                         <h3><?= $row_pengembalian; ?></h3>
