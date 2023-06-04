@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="dashboard" class="logo" style="font-family: 'Quicksand', sans-serif">
+    <a href="dashboard" class="logo" style="font-family: 'Quicksand', sans-serif" style="background-color: #235D69;">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>P</b>CS</span>
         <!-- logo for regular state and mobile devices -->
