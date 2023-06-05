@@ -60,15 +60,6 @@ session_start();
                 </div>
             </form>
 
-            <div class="social-auth-links text-center">
-                <p style="font-size: 11px;">- ATAU -</p>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <button type="button" onclick="Register()" class="btn btn-block btn-warning btn-flat"><i class="fa fa-user-plus"></i> Daftar sebagai member</button>
-                    </div>
-                </div>
-            </div>
-
             <p style="text-align: center; font-size: 13px;">Hak Cipta &copy; <?= date('Y'); ?> .<?= $row1['nama_app']; ?> by Lib.io.</p>
             
 
@@ -84,11 +75,11 @@ session_start();
     <!-- -->
     <script src="assets/json/lottie-player.js"></script>
     <!-- Fungsi mengarahkan kehalaman pendaftaran -->
-    <script>
+    <!-- <script>
         function Register() {
             window.location.href = "pendaftaran";
         }
-    </script>
+    </script> -->
     <!-- Fungsi mengarahkan kehalaman lupa password -->
     <script>
         function ForgotPassword() {

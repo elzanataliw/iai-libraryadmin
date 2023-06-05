@@ -29,7 +29,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="alert alert-secondary" style="color: #383d41; background-color: #e2e3e5; border-color: #d6d8db;">
-            Selamat Datang, <?= $_SESSION['fullname']; ?> di Lib.io Admin Library.
+            <strong>Selamat Datang, <?= $_SESSION['fullname']; ?> di Lib.io Admin Library.</strong>
         </div>
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -61,7 +61,7 @@
                 $row_buku = mysqli_num_rows($query_buku);
                 ?>
                 <div class="center-content">
-                    <div class="small-box bg-green">
+                    <div class="small-box" style="background-color: #5ACAA0;">
                         <div class="inner">
                             <h3><?= $row_buku; ?></h3>
 
@@ -78,10 +78,10 @@
             <!-- <div class="col-lg-3 col-xs-6"> -->
                 <!-- small box -->
                 <!-- <?php
-                include "../../config/koneksi.php";
-                $query_peminjaman = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE tanggal_peminjaman > 0");
-                $row_peminjaman = mysqli_num_rows($query_peminjaman);
-                ?>
+                // include "../../config/koneksi.php";
+                // $query_peminjaman = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE tanggal_peminjaman > 0");
+                // $row_peminjaman = mysqli_num_rows($query_peminjaman);
+                // ?>
                 <div class="small-box bg-yellow">
                     <div class="inner">
                         <h3><?= $row_peminjaman; ?></h3>
@@ -98,10 +98,10 @@
             <!-- <div class="col-lg-3 col-xs-6"> -->
                 <!-- small box -->
                 <!-- <?php
-                include "../../config/koneksi.php";
-                $query_pengembalian = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE tanggal_pengembalian > 0");
-                $row_pengembalian = mysqli_num_rows($query_pengembalian);
-                ?>
+                // include "../../config/koneksi.php";
+                // $query_pengembalian = mysqli_query($koneksi, "SELECT * FROM peminjaman WHERE tanggal_pengembalian > 0");
+                // $row_pengembalian = mysqli_num_rows($query_pengembalian);
+                // ?>
                 <div class="small-box bg-red">
                     <div class="inner">
                         <h3><?= $row_pengembalian; ?></h3>

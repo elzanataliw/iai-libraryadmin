@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1 style="font-family: 'Quicksand', sans-serif; font-weight: bold;">
-            Kategori
+            Kategori Buku
             <small>
                 <script type='text/javascript'>
                     var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];

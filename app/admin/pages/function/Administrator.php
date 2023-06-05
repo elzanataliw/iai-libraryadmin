@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "../../../../config/koneksi.php";
-include "Pesan.php";
 
 if ($_GET['act'] == "tambah") {
     $fullname = $_POST['namaLengkap'];
@@ -28,7 +27,7 @@ if ($_GET['act'] == "tambah") {
     }
 } elseif ($_GET['act'] == "edit") {
 
-    UpdateDataPesan();
+    // UpdateDataPesan();
 
     $id_admin = $_POST['id_admin'];
     $fullname = htmlspecialchars(addslashes($_POST['fullname']));
